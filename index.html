@@ -37,7 +37,7 @@
 		<section>
 			<section>
 				<br>
-				<h2>Life Sciences Semantic Web (LSSW)</h2>
+				<h2>Life Sciences Semantic Web</h2>
 				<br>
 				<h3>Máster Bioinformática UM (2014-2015)</h3>
 				<br>
@@ -48,12 +48,12 @@
 			</section>
 			<section>
 				<br>
-				<h2>Life Sciences Semantic Web (LSSW)</h2>
-				<br>
+				<!--<h2>Life Sciences Semantic Web</h2>
+				<br>-->
 				<br>
 				<p align="left"><a href="http://mikeleganaaranguren.wordpress.com/teaching/">http://mikeleganaaranguren.wordpress.com/teaching/</a></p><br> 
-				<p align="left"><a href="http://mikel-egana-aranguren.github.io/LSSW-UM-2014-2015/index.html">Versión HTML de esta presentación</a></small></p><br>
-				<p align="left"><a href="http://github.com/mikel-egana-aranguren/LSSW-UM-2014-2015">Todo el material (Presentación, ejercicios, datos, código) en GitHub</a></small></p><br>
+				<p align="left"><a href="http://mikel-egana-aranguren.github.io/LSSW-UM-2014-2015/index.html">Versión HTML</a></small></p><br>
+<!-- 				<p align="left"><a href="http://github.com/mikel-egana-aranguren/LSSW-UM-2014-2015">Todo el material (Presentación, ejercicios, datos, código)</small></p><br> -->
 				<br><br>
 				<img  src="by-nc-sa.eu_petit.png" alt="by-nc-sa">
 			</section>
@@ -74,7 +74,7 @@
 				<img  src="SW_stack.png" alt="SW_stack.png">
 			</section>
 		</section>
-		<section>
+		<!--<section>
 			<section>
 				<br><br><br><br>
 				<h2>Ontologías</h2>
@@ -172,7 +172,7 @@ Collaboratively</p><br>
 				<p align="left">(Copiar go.obo en una historia nueva)</p><br>
 			</section>
 			
-		</section>
+		</section>-->
 		<section>
 			<section>
 					<br><br><br><br>
@@ -603,10 +603,57 @@ Collaboratively</p><br>
 						(<a href="http://www.cambridgesemantics.com/semantic-university/sparql-by-example">Cambridge Semantics</a>)
 						</p>	
 					</section>
-					<section>
+					<!--<section>
 						<h3>SPARQL</h3>
 						<br><br>
 						<p align="left">Ejercicio práctico: <a href="http://linkedlifedata.com/sparql" target="_blank">http://linkedlifedata.com/sparql</a></p><br>		
+					</section>-->
+					
+					<section>
+						<h3>SPARQL (Ejercicios)</h3>
+						<br><br>
+						<p align="left">Bajar RDF y ontologia e inspeccionar en RDF validator y protege</p><br>		
+					</section>
+					
+					
+					<section>
+						<h3>SPARQL (Ejercicios)</h3>
+						<br><br>
+						<p align="left">Un triple store en cada puerto: <a href="http://biomaster.atica.um.es:8180/" target="_blank">http://biomaster.atica.um.es:<strike>8180</strike></a></p><br>		
+					</section>
+					
+					<section>
+						<h3>SPARQL (Ejercicios)</h3>
+						<br><br>
+						<p align="left">Lista homes - puertos </p><br>	
+					</section>
+					
+					<section>
+						<h3>SPARQL (Ejercicios)</h3>
+						<br><br>
+						<p align="left"><code>cd /home/USER/LinkedDataServer/</code></p><br>
+						<p align="left"><code>export STARDOG_HOME=/home/USER/LinkedDataServer/stardog-3.0-home</code></p><br>	
+						<p align="left"><code>export PATH=/home/USER/LinkedDataServer/stardog-3.0/bin:$PATH</code></p><br>	
+					</section>
+					
+					<section>
+						<h3>SPARQL (Ejercicios)</h3>
+						<br><br>
+						<p align="left"><code>stardog-admin --server snarl://localhost:8180 db create -n um</code></p><br>
+						<p align="left"><code>stardog data add snarl://localhost:8180/um data/data2.rdf data/data.rdf</code></p><br>		
+						<p align="left">DataBases; um; query</p><br>	
+						<p align="left">DataBases; um; browse</p><br>
+					</section>
+					
+					<section>
+						<h3>SPARQL (Ejercicios)</h3>
+						<br><br>
+						<p align="left">Obtener todos los triples</p><br>	
+						<p align="left">¿Que entidad se relaciona con ProtA a traves de partof (poner bien)?</p><br>	
+						<p align="left">consulta compleja con varios triples spo;ofg</p><br>	
+						<p align="left">Todos los triples en los que este A (poner bien) describe</p><br>
+						<p align="left">Inferencia</p><br>
+						<p align="left">Service</p><br>
 					</section>
 
 					<section>
@@ -1044,31 +1091,6 @@ Collaboratively</p><br>
 						<li>...</li>
 						</ul>
 					</section>
-			
-		</section>
-		<section>
-			<section>
-				<br><br><br><br>
-				<h2>Semantic Web Services</h2>
-			</section>
-			<section>
-				<h3>SADI</h3>
-				<br>						
-						<p align="left">SADI: Semantic Automated Discovery and Integration</p><br>
-						<p align="left"><a href="http://code.google.com/p/sadi/">http://code.google.com/p/sadi/</a></p><br>
-			</section>
-			<section>
-				<h3>SADI</h3>
-				
-				<img  src="SADI.jpg" alt="SADI.jpg">
-			</section>
-			<section>
-				<h3>SADI ejercicio 1</h3>
-				<br>
-				<p align="left">Crear un servicio SADI en Python (en uno de los puertos asignados)</p><br>
-				<p align="left"><a href="http://code.google.com/p/sadi/wiki/BuildingServicesInPython">http://code.google.com/p/sadi/wiki/BuildingServicesInPython</a> 
-				(<a href="http://code.google.com/p/sadi/wiki/BuildingServicesInPython#Creating_the_Python_SADI_service">Creating_the_Python_SADI_service</a>)</p>
-			</section>
 			
 		</section>
 		<section>
