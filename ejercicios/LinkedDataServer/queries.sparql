@@ -1,0 +1,20 @@
+# General description
+
+SELECT DISTINCT * FROM <http://um.es/ld> WHERE {?s ?p ?o}
+
+SELECT DISTINCT * WHERE {?s ?p ?o}
+
+# Retrieve triples related to an entity
+
+DESCRIBE <http://genomic-resources.eu/resource/Prot_A>
+
+# Reasoning with transitivity (After uploading ontology.owl and setting reasoning on) 
+
+SELECT ?o WHERE {<http://genomic-resources.eu/resource/Gene_B> <http://genomic-resources.eu/ontology/part_of> ?o}
+
+# Testing SERVICE keyword
+
+SELECT DISTINCT ?person
+WHERE {
+SERVICE <http://dbpedia.org/sparql> { ?person a <http://xmlns.com/foaf/0.1/Person> . }
+}
