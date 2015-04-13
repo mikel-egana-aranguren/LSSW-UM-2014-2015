@@ -1,0 +1,4 @@
+SELECT DISTINCT ?person
+WHERE {
+  SERVICE <http://dbpedia.org/sparql> { ?person a <http://xmlns.com/foaf/0.1/Person> . }
+}

@@ -1,0 +1,10 @@
+PREFIX gr:<http://genomic-resources.eu/resource/>
+PREFIX gr_ont:<http://genomic-resources.eu/ontology/>
+
+SELECT ?whole 
+WHERE {
+  gr:Gene_B gr_ont:part_of ?whole
+}
+
+
+# Subir a traves de la web ontology.owl y reasoning on

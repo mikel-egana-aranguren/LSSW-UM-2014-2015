@@ -4,6 +4,8 @@ SELECT DISTINCT * FROM <http://um.es/ld> WHERE {?s ?p ?o}
 
 SELECT DISTINCT * WHERE {?s ?p ?o}
 
+SELECT * WHERE {?s ?p ?o}
+
 # Retrieve triples related to an entity
 
 DESCRIBE <http://genomic-resources.eu/resource/Prot_A>
@@ -17,4 +19,59 @@ SELECT ?o WHERE {<http://genomic-resources.eu/resource/Gene_B> <http://genomic-r
 SELECT DISTINCT ?person
 WHERE {
 SERVICE <http://dbpedia.org/sparql> { ?person a <http://xmlns.com/foaf/0.1/Person> . }
+}
+
+
+PREFIX up:<http://purl.uniprot.org/core/> 
+SELECT ?protein
+WHERE
+{
+  SERVICE <http://beta.sparql.uniprot.org/sparql>{
+		?protein a up:Protein .
+		?protein up:mnemonic 'A4_HUMAN'
+                 }
+}
+
+
+
+
+SELECT ?s
+WHERE
+{
+  <http://genomic-resources.eu/resource/Prot_B> owl:sameAs ?s .
+}
+
+http://purl.uniprot.org/uniprot/P08251
+
+
+
+SELECT ?o
+WHERE
+{
+
+  SERVICE <http://beta.sparql.uniprot.org/sparql>{
+	<http://purl.uniprot.org/uniprot/P08251> 	<http://purl.uniprot.org/core/classifiedWith> ?o
+                 }
+}
+
+ http://purl.obolibrary.org/obo/GO_0006813
+ http://purl.obolibrary.org/obo/GO_0006814
+ http://purl.uniprot.org/keywords/1015
+ http://purl.uniprot.org/keywords/1133
+ http://purl.uniprot.org/keywords/1185
+ http://purl.uniprot.org/keywords/325
+ http://purl.uniprot.org/keywords/735
+ http://purl.uniprot.org/keywords/740
+ http://purl.obolibrary.org/obo/GO_0005890
+
+
+
+
+SELECT ?s ?o
+WHERE
+{
+  <http://genomic-resources.eu/resource/Prot_B> owl:sameAs ?s .
+  SERVICE <http://beta.sparql.uniprot.org/sparql>{
+	?s 	<http://purl.uniprot.org/core/classifiedWith> ?o
+                 }
 }

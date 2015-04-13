@@ -1,0 +1,8 @@
+PREFIX gr:<http://genomic-resources.eu/resource/>
+PREFIX gr_ont:<http://genomic-resources.eu/ontology/>
+
+SELECT ?prot ?gene ?whole 
+WHERE {
+  ?prot gr:codified_by ?gene .
+  ?prot gr_ont:part_of ?whole
+}

@@ -1,0 +1,6 @@
+PREFIX gr_ont:<http://genomic-resources.eu/ontology/>
+
+SELECT ?org  
+WHERE {
+  ?org rdf:type gr_ont:Organelle
+}

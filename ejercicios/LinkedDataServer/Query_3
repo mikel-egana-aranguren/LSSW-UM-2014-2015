@@ -1,0 +1,8 @@
+# Stardog incluye prefixes por defecto, eg RDFS
+
+PREFIX gr:<http://genomic-resources.eu/resource/>
+
+SELECT ?label 
+WHERE {
+  gr:Prot_B rdfs:label ?label
+}

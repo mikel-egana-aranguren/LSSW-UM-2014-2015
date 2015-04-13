@@ -1,0 +1,12 @@
+SELECT ?gene 
+WHERE {
+  <http://genomic-resources.eu/resource/Prot_B> <http://genomic-resources.eu/resource/codified_by> ?gene
+}
+
+
+PREFIX gr:<http://genomic-resources.eu/resource/>
+
+SELECT ?gene 
+WHERE {
+  gr:Prot_B gr:codified_by ?gene
+}

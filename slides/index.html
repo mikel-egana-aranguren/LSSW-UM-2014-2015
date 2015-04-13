@@ -599,9 +599,11 @@ Collaboratively</p><br>
 					<section>
 						<h3>SPARQL</h3>
 						<br><br>
-						<p align="left">Tutorial: <a href="http://www.cambridgesemantics.com/sparql-by-example/slides.html" target="_blank">SPARQL by example</a> 
+						<p align="left"><a href="../doc/sparql-tutorial-Leigh-Dodds.ppt" target="_blank">SPARQL tutorial (Leigh Dodds)</a> 
+						</p>
+						<p align="left"><a href="http://www.cambridgesemantics.com/sparql-by-example/slides.html" target="_blank">SPARQL by example</a> 
 						(<a href="http://www.cambridgesemantics.com/semantic-university/sparql-by-example">Cambridge Semantics</a>)
-						</p>	
+						</p>
 					</section>
 					<!--<section>
 						<h3>SPARQL</h3>
@@ -612,51 +614,59 @@ Collaboratively</p><br>
 					<section>
 						<h3>SPARQL (Ejercicios)</h3>
 						<br><br>
-						<p align="left">Bajar RDF y ontologia e inspeccionar en RDF validator y protege</p><br>		
+						<p align="left">Familiarizarse con los datos que vamos que vamos a usar para Linked Data</p><br>
+						<p align="left"><a href="http://github.com/mikel-egana-aranguren/LinkedDataServer">Linked Data Server (data)</a></p><br>
+						<p align="left">RDF (raw); copiar y pegar en <a href="http://www.w3.org/RDF/Validator">RDF validator</a> 
+						<p align="left">OWL (raw; bajar y abrir con Protégé</p><br>		
 					</section>
 					
 					
 					<section>
 						<h3>SPARQL (Ejercicios)</h3>
 						<br><br>
-						<p align="left">Un triple store en cada puerto: <a href="http://biomaster.atica.um.es:8180/" target="_blank">http://biomaster.atica.um.es:<strike>8180</strike></a></p><br>		
+						<p align="left">Un triple store Stardog en cada puerto: <a href="http://biomaster.atica.um.es:8180/" target="_blank">http://biomaster.atica.um.es:<strike>8180</strike></a></p><br>
+						<p align="left">Cada alumno tiene un puerto asignado (8181-8193)</p><br>	
+					</section>
+										
+					<section>
+						<h3>SPARQL (Ejercicios)</h3>
+						<br><br>
+						<p align="left"><small><code>cd /home/USER/LinkedDataServer/</code></small></p><br>
+						<p align="left"><small><code>export STARDOG_HOME=/home/USER/LinkedDataServer/stardog-3.0-home</code></small></p><br>	
+						<p align="left"><small><code>export PATH=/home/USER/LinkedDataServer/stardog-3.0/bin:$PATH</code></small></p><br>	
 					</section>
 					
 					<section>
 						<h3>SPARQL (Ejercicios)</h3>
 						<br><br>
-						<p align="left">Lista homes - puertos </p><br>	
+						<p align="left"><small><code>stardog-admin --server snarl://localhost:8180 db create -n um</code></small></p><br>
+						<p align="left"><small><code>stardog data add snarl://localhost:8180/um data/data2.rdf data/data.rdf</code></small></p><br>		
+						<p align="left">DataBases; um; query (admin;admin)</p><br>	
+						<p align="left">DataBases; um; browse (admin;admin)</p><br>
 					</section>
 					
 					<section>
 						<h3>SPARQL (Ejercicios)</h3>
 						<br><br>
-						<p align="left"><code>cd /home/USER/LinkedDataServer/</code></p><br>
-						<p align="left"><code>export STARDOG_HOME=/home/USER/LinkedDataServer/stardog-3.0-home</code></p><br>	
-						<p align="left"><code>export PATH=/home/USER/LinkedDataServer/stardog-3.0/bin:$PATH</code></p><br>	
+						<p align="left" class="fragment roll-in">QUERY 1: Obtener todos los triples del dataset</p><br>	
+						<p align="left" class="fragment roll-in">QUERY 2: ¿Que entidad se relaciona con ProtB a traves del predicado codifiedBy?</p><br>	
+						<p align="left" class="fragment roll-in">QUERY 3: ¿Cual es el rdfs:label de ProtB?</p><br>
+						<p align="left" class="fragment roll-in">QUERY 4: ¿Que instancias pertenecen a la clase Organelle?</p><br>
+						
 					</section>
 					
 					<section>
 						<h3>SPARQL (Ejercicios)</h3>
 						<br><br>
-						<p align="left"><code>stardog-admin --server snarl://localhost:8180 db create -n um</code></p><br>
-						<p align="left"><code>stardog data add snarl://localhost:8180/um data/data2.rdf data/data.rdf</code></p><br>		
-						<p align="left">DataBases; um; query</p><br>	
-						<p align="left">DataBases; um; browse</p><br>
+						<p align="left" class="fragment roll-in">QUERY 5: ¿Que entidad es parte de algo (part of) y esta codificada  (codifiedBy) por un gen?</p><br>
+						<p align="left" class="fragment roll-in">QUERY 6: ¿En que triples aparece Prot A como sujeto?(*)</p><br>
+						<p align="left" class="fragment roll-in">QUERY 7: Inferencia. ¿Con que entidades se relaciona Gene B a traves de part of?¿Debería ser parte de Nucleus?</p><br>
+						<p align="left" class="fragment roll-in">QUERY 8: Consultas federadas. </p><br>
+						<p align="left" class="fragment roll-in">OPTIONAL, UNION, FILTER, ... </p><br>
 					</section>
 					
-					<section>
-						<h3>SPARQL (Ejercicios)</h3>
-						<br><br>
-						<p align="left">Obtener todos los triples</p><br>	
-						<p align="left">¿Que entidad se relaciona con ProtA a traves de partof (poner bien)?</p><br>	
-						<p align="left">consulta compleja con varios triples spo;ofg</p><br>	
-						<p align="left">Todos los triples en los que este A (poner bien) describe</p><br>
-						<p align="left">Inferencia</p><br>
-						<p align="left">Service</p><br>
-					</section>
 
-					<section>
+					<!--<section>
 						<h3>SPARQL queries federadas</h3>
 						
 						<br><br>
@@ -681,7 +691,7 @@ Collaboratively</p><br>
 						</small>
 						</p>
 						<small><a href="http://www.slideshare.net/micheldumontier/powering-scientific-discovery-with-the-semantic-web-vanbug-2014">Michel Dumontier at Slide Share</a></small>
-					</section>
+					</section>-->
 		</section>
 		<section>
 			<section>
