@@ -669,34 +669,6 @@ Collaboratively</p><br>
 						<p align="left">QUERY 8: Consultas federadas. <a href="service">Ejemplo Uniprot</a>.<br><br> ¿Que entidad es owl:sameAs otra entidad de Uniprot que es el sujeto del triple http://purl.uniprot.org/core/classifiedWith http://purl.obolibrary.org/obo/GO_0005890?</p><br>
 <!-- 						<p align="left" class="fragment roll-in">OPTIONAL, UNION, FILTER, ... </p><br> -->
 					</section>
-					
-
-					<!--<section>
-						<h3>SPARQL queries federadas</h3>
-						
-						<br><br>
-						<p align="left">Get all protein catabolic processes (and more specific) in biomodels</p><br>
-						<p align="left">
-						<small>
-						<code>
-						SELECT ?go ?label <br>
-						WHERE {<br>
-						&nbsp;&nbsp;service &lthttp://bioportal.bio2rdf.org/sparql> {<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;?go rdfs:label ?label .<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;?go rdfs:subClassOf ?tgo .<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;?tgo rdfs:label ?tlabel .<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;FILTER regex(?tlabel, "^protein catabolic process")<br>
-						&nbsp;&nbsp;}<br>
-							&nbsp;&nbsp;&nbsp;&nbsp;service &lhttp://biomodels.bio2rdf.org/sparql> {<br>
-							&nbsp;&nbsp;&nbsp;&nbsp;?x &lhttp://bio2rdf.org/biopax_vocabulary:identical-to> ?go .<br>
-							&nbsp;&nbsp;&nbsp;&nbsp;?x a &lhttp://www.biopax.org/release/biopax-level3.owl#BiochemicalReaction> .<br>
-						  &nbsp;&nbsp;}<br>
-						}<br>
-						</code>
-						</small>
-						</p>
-						<small><a href="http://www.slideshare.net/micheldumontier/powering-scientific-discovery-with-the-semantic-web-vanbug-2014">Michel Dumontier at Slide Share</a></small>
-					</section>-->
 		</section>
 		<section>
 			<section>
@@ -837,7 +809,7 @@ Collaboratively</p><br>
 						<br/>
 						<p align="left">URI identifica a la entidad; URLs identifican (localizan!) diferentes representaciones (RDF, HTML, ...) de la entidad</p><br/>
 						<p align="left">Descripción de la entidad (RDF, HTML, ...) &#8800; entidad</p><br/>
-						<p align="left">HTTP URIs dereferenciable (URLs): cuando se busca una URI, deberia devolver una descripción adecuada del objeto que identifica esa URI</p><br/>
+						<p align="left">HTTP URIs dereferenciable: cuando se busca una URI, deberia devolver una descripción adecuada del objeto que identifica esa URI</p><br/>
 					</section>
 					
 					<section>
@@ -862,9 +834,27 @@ Collaboratively</p><br>
 					<section>
 						<h3>303 URIs vs Hash URIs</h3>
 						<br/>
-						<p align="left"><a href="http://linkeddatabook.com/editions/1.0/#htoc11">http://linkeddatabook.com/editions/1.0/#htoc11</a></p>
+						<p align="center"><a href="http://www.w3.org/TR/cooluris/">Cool URIs for the Semantic Web</a></p><br>
+						<img src="uris.png" alt="uris.png"><br><br>
+						<p align="right"><small><a href="http://www.w3.org/TR/cooluris/">Cool URIs for the Semantic Web</a></small></p>
+						
+						
 					</section>
 					<section>
+						<h3>303 URIs</h3>
+						<br/>
+						<img src="303.png" alt="303.png"><br><br><br><br><br/><br/>
+						<p align="right"><small><a href="http://www.w3.org/TR/cooluris/">Cool URIs for the Semantic Web</a></small></p>
+					</section>
+					<section>
+						<h3>Hash URIs</h3>
+						<br/>
+						<img src="hash_conneg.png" alt="hash_conneg.png"><br><br/><br/>
+						<p align="right"><small><a href="http://www.w3.org/TR/cooluris/">Cool URIs for the Semantic Web</a></small></p>
+					</section>
+					
+					
+<!--					<section>
 						<h3>303 URIs</h3>
 						<br/>
 						<img src="303.png" alt="303.png"><br>
@@ -875,7 +865,7 @@ Collaboratively</p><br>
 						<br/>
 						<img src="fragment.png" alt="fragment.png"><br>
 						<p><small><a href="http://shop.oreilly.com/product/9780596153823.do">Programming the Semantic Web</a></small></p>
-					</section>
+					</section>-->
 					<section>
 						<h3>Diseño URIs</h3>
 						<br/>
@@ -996,7 +986,7 @@ Collaboratively</p><br>
 									 </li>
 							<li>Añadir enlaces a otros datasets
 									<ul>
-									<li>Manualmente o con herramientas como SILK</li>									
+									<li>Manualmente o con herramientas como SILK o LIMES</li>									
 									<li>A nivel de instancias (owl:sameAs, predicados, ...) y a nivel de vocabulario (owl:equivalentClass, ...)</li>									
 									</ul>
 							</li>
@@ -1020,72 +1010,62 @@ Collaboratively</p><br>
 						<br />
 						<p align="left">Ejercicio práctico: recrear todo el proceso de publicar un dataset Linked Data</p>
 						<br />
-						<p  align="left">Crear el dataset y "publicarlo" en una infraestructura ya lista (Life Sciences Linked Data)</p>
+						<p  align="left">Publicar el dataset de ejercicios SPARQL en una infraestructura ya preparada (Linked Data Server)</p>
 					</section>
 				
 					<section>
-						<h3>Life Sciences Linked Data</h3>
+						<h3>Linked Data Server</h3>
 						<br />
 							<p align="left">"Pack" ya listo y configurado para publicar Linked Data en localhost (Solo para GNU/Linux)</p>
 							<br />
-							<p align="left"><a href="http://github.com/mikel-egana-aranguren/LSLD">http://github.com/mikel-egana-aranguren/LSLD</a></p>							
+							<p align="left"><a href="http://github.com/mikel-egana-aranguren/LinkedDataServer">http://github.com/mikel-egana-aranguren/LinkedDataServer</a></p>							
 
 					</section>
 					
 					<section>
-						<h3>Life Sciences Linked Data</h3>
-						<br />
-							<p align="left"><a href="hhttp://jena.apache.org/documentation/serving_data/index.html">Fuseki</a>: triple store</p>
-							<img src="lsld_setting.png" align="right">
-							<p align="left"><a href="http://jetty.codehaus.org/jetty/">Jetty</a>: servidor web</p>
-							<p align="left"><a href="http://wifo5-03.informatik.uni-mannheim.de/pubby/">Pubby</a>: negociacion contenido etc.</p>
-					</section>
-					
-					<section>
-						<h3>Life Sciences Linked Data</h3>
+						<h3>Linked Data Server</h3>
 						<br/>
-						<p align="left">Probar con el dataset por defecto en biomaster.atica.um.es</p>	
+							<img src="structure.png" alt="structure.png">
+					</section>
+					
+					<section>
+						<h3>Linked Data Server</h3>
 						<br/>
-						<p align="left">Instrucciones: <a href="http://github.com/mikel-egana-aranguren/LSLD#running-with-the-default-dataset">http://github.com/mikel-egana-aranguren/LSLD#running-with-the-default-dataset</a></p>					
-												
+						<p align="left">Stardog: <a href="http://biomaster.atica.um.es:8180/" target="_blank">http://biomaster.atica.um.es:<strike>8180</strike></a></p>	
+						<br/>
+						<p align="left">LinkedDataServer.js: 
+						<br><br>
+						    <code>var port=1337;</code> <br>
+						   <code>var endpoint_url = "http://localhost:5820/";</code>  <br>
+						      </p>					
 					</section>
 					
 
 
 					<section>
-						<h3>Life Sciences Linked Data</h3>
+						<h3>Linked Data Server</h3>
 						<br/>			
-						<p align="left">Publicar el dataset de ejemplo con enlaces a otros datasets LOD biomaster.atica.um.es</p><br/>
-						<p align="left">Instrucciones: <a href="http://github.com/mikel-egana-aranguren/LSLD#running-with-a-different-dataset">http://github.com/mikel-egana-aranguren/LSLD#running-with-a-different-dataset</a></p><br/>
+						<p align="left"><code>nodejs LinkedDataServer.js</code></p><br/>
+						<p align="left"><a href="http://biomaster.atica.um.es:3030/resource/Prot_B">http://biomaster.atica.um.es:<strike>3030</strike>/resource/Prot_B</a></p><br/>
+						CONNEG curl
+						
+						cp key to everyone and deploy in some of them (inlcuding mine)
+						
+						
 					</section>
-					
-					
+
 					<section>
-						<h3>Life Sciences Linked Data</h3>
-						<br/>		
-						<ul>
-							<li class="fragment roll-in">Cada pareja tiene dos puertos asignados</li>
-							<li class="fragment roll-in"><del>localhost</del> http://biomaster.atica.um.es/</li>
-							<li class="fragment roll-in">Invocar Fuseki en otro puerto (<a href="http://jena.apache.org/documentation/serving_data/">doc</a>)</li>
-							<li class="fragment roll-in">ejecutar s-put en otro dominio/puerto</li>
-							<li class="fragment roll-in">Editar web.xml para que apunte a lsld-toy-config-file.ttl</li>
-							<li class="fragment roll-in">Editar lsld-toy-config-file.ttl en 3 sitios (dominio/puerto)</li>
-							<li class="fragment roll-in">Ejecutar jetty en un dominio differente</li>
-						</ul>
-					</section>
-					
-					<section>
-						<h3>Life Sciences Linked Data</h3>
+						<h3>Linked Data Server</h3>
 						<br/>
-						<p align="left">Crear vuestro propio dataset con Protégé 4 (<a href="http://protege.stanford.edu/">http://protege.stanford.edu/</a>) (Demo Protégé?)</p>
+						<p align="left">Añadir un triple a un entidad externa y publicar en Linked Data server</p>
 						<br>						
-						<p align="left">Con enlaces a otros datasets</p>
+						<p align="left">Crear otro dataset y publicar en Linked Data server</p>
 						<br>						
-						<p align="left">Publicar el dataset en localhost</p>
+						<p align="left">Arreglar alguno de los <a href="http://github.com/mikel-egana-aranguren/LinkedDataServer/issues">bugs</a> de LinkedDataServer</p>
 					</section>
 					
-					<section>
-						<h3>Life Sciences Linked Data</h3>
+<!--					<section>
+						<h3>Linked Data Server</h3>
 						<br/>
 						<p align="left">Silk ... </p>
 						<br>						
@@ -1105,7 +1085,7 @@ Collaboratively</p><br>
 						<a href="http://inspector.sindice.com/">Sindice inspector</a>, ...</li>
 						<li>...</li>
 						</ul>
-					</section>
+					</section>-->
 			
 		</section>
 		<section>
@@ -1124,7 +1104,7 @@ Collaboratively</p><br>
 						<a href="http://www.w3.org/2001/sw/hcls/notes/hcls-rdf-guide/">Health Care and Life Science (HCLS) Linked Data Guide</a></p> 
 					</section>
 					<section>
-															<h3>Más información</h3>
+						<h3>Más información</h3>
 						<br><br>	
 						<p align="left"><a href="http://shop.oreilly.com/product/9780596153823.do">Programming the Semantic Web</a> (O'Reilly)</p>	<br>				
     					<p align="left"><a href="http://patterns.dataincubator.org/book/">Linked Data Patterns</a></p>
