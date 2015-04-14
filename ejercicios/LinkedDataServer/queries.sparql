@@ -75,3 +75,14 @@ WHERE
 	?s 	<http://purl.uniprot.org/core/classifiedWith> ?o
                  }
 }
+
+
+
+SELECT ?s ?o
+WHERE
+{
+  ?o owl:sameAs ?s .
+  SERVICE <http://beta.sparql.uniprot.org/sparql>{
+	?s 	<http://purl.uniprot.org/core/classifiedWith> <http://purl.obolibrary.org/obo/GO_0005890>
+                 }
+}

@@ -1,4 +1,26 @@
+SELECT ?s ?o
+WHERE
+{
+  ?s owl:sameAs ?o .
+  SERVICE <http://beta.sparql.uniprot.org/sparql>{
+	?o 	<http://purl.uniprot.org/core/classifiedWith> <http://purl.obolibrary.org/obo/GO_0005890>
+                 }
+}
+
+
+
 SELECT DISTINCT ?person
 WHERE {
   SERVICE <http://dbpedia.org/sparql> { ?person a <http://xmlns.com/foaf/0.1/Person> . }
+}
+
+
+PREFIX up:<http://purl.uniprot.org/core/> 
+SELECT ?protein
+WHERE
+{
+  SERVICE <http://beta.sparql.uniprot.org/sparql>{
+		?protein a up:Protein .
+		?protein up:mnemonic 'A4_HUMAN'
+                 }
 }
