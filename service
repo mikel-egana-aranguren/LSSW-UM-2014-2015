@@ -1,0 +1,9 @@
+PREFIX up:<http://purl.uniprot.org/core/> 
+SELECT ?protein
+WHERE
+{
+  SERVICE <http://beta.sparql.uniprot.org/sparql>{
+		?protein a up:Protein .
+		?protein up:mnemonic 'A4_HUMAN'
+                 }
+}
