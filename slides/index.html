@@ -500,12 +500,12 @@ Collaboratively</p><br>
 						<br>
 						<img src="triple_datatype.png" alt="triple_datatype.png">
 					</section>
-					<section>
+					<!--<section>
 						<h3>Elementos RDF</h3>
 						<br>
 						<p align="left"><code>rdf:type</code>: agrupar recursos en clases</p><br>
 						<img src="rdf_type.png">
-					</section>
+					</section>-->
 					<section>
 						<h3>Elementos RDF</h3>
 						<br>
@@ -617,7 +617,7 @@ Collaboratively</p><br>
 						<p align="left">Familiarizarse con los datos que vamos que vamos a usar para Linked Data</p><br>
 						<p align="left"><a href="http://github.com/mikel-egana-aranguren/LinkedDataServer">Linked Data Server (data)</a></p><br>
 						<p align="left">RDF (raw); copiar y pegar en <a href="http://www.w3.org/RDF/Validator">RDF validator</a> 
-						<p align="left">OWL (raw; bajar y abrir con Protégé</p><br>		
+						<p align="left">OWL (raw); bajar y abrir con Protégé</p><br>		
 					</section>
 					
 					
@@ -639,8 +639,9 @@ Collaboratively</p><br>
 					<section>
 						<h3>SPARQL (Ejercicios)</h3>
 						<br><br>
-						<p align="left"><small><code>stardog-admin --server snarl://localhost:8180 db create -n um</code></small></p><br>
-						<p align="left"><small><code>stardog data add snarl://localhost:8180/um data/data2.rdf data/data.rdf</code></small></p><br>		
+						<p align="left"><small><code>stardog-admin server start --port <strike>8180</strike></code></small></p><br>
+						<p align="left"><small><code>stardog-admin --server snarl://localhost:<strike>8180</strike> db create -n um</code></small></p><br>
+						<p align="left"><small><code>stardog data add snarl://localhost:<strike>8180</strike>/um data/data2.rdf data/data.rdf</code></small></p><br>		
 						<p align="left">DataBases; um; query (admin;admin)</p><br>	
 						<p align="left">DataBases; um; browse (admin;admin)</p><br>
 					</section>
@@ -649,8 +650,8 @@ Collaboratively</p><br>
 						<h3>SPARQL (Ejercicios)</h3>
 						<br><br>
 						<p align="left" class="fragment roll-in">QUERY 1: Obtener todos los triples del dataset</p><br>	
-						<p align="left" class="fragment roll-in">QUERY 2: ¿Que entidad se relaciona con ProtB a traves del predicado codifiedBy?</p><br>	
-						<p align="left" class="fragment roll-in">QUERY 3: ¿Cual es el rdfs:label de ProtB?</p><br>
+						<p align="left" class="fragment roll-in">QUERY 2: ¿Que entidad se relaciona con Prot B a traves del predicado codifiedBy?</p><br>	
+						<p align="left" class="fragment roll-in">QUERY 3: ¿Cual es el rdfs:label de Prot B?</p><br>
 						<p align="left" class="fragment roll-in">QUERY 4: ¿Que instancias pertenecen a la clase Organelle?</p><br>
 						
 					</section>
@@ -666,7 +667,7 @@ Collaboratively</p><br>
 					<section>
 						<h3>SPARQL (Ejercicios)</h3>
 						<br><br>
-						<p align="left">QUERY 8: Consultas federadas. <a href="service">Ejemplo Uniprot</a>.<br><br> ¿Que entidad es owl:sameAs otra entidad de Uniprot que es el sujeto del triple http://purl.uniprot.org/core/classifiedWith http://purl.obolibrary.org/obo/GO_0005890?</p><br>
+						<p align="left">QUERY 8: Consultas federadas. <a href="service">Ejemplo Uniprot</a>.<br><br> ¿Que entidad de nuestro dataset es owl:sameAs otra entidad de Uniprot que es el sujeto del triple http://purl.uniprot.org/core/classifiedWith http://purl.obolibrary.org/obo/GO_0005890?</p><br>
 <!-- 						<p align="left" class="fragment roll-in">OPTIONAL, UNION, FILTER, ... </p><br> -->
 					</section>
 		</section>
@@ -887,12 +888,12 @@ Collaboratively</p><br>
 						<p><small><a href="http://www.slideshare.net/boricles/">http://www.slideshare.net/boricles/</a></small></p>
 					</section>
 					
-					<section>
+					<!--<section>
 						<h3>Inferencia en LD</h3>
 						<br/>
 						<p align="left">Para producir el dataset: materializar triples y asegurar consistencia</p><br/>
 						<p align="left">En consultas</p><br/>
-					</section>
+					</section>-->
 					
 				
 					<section>
@@ -1008,9 +1009,7 @@ Collaboratively</p><br>
 					<section>
 						<h3>Publicar datos en LD</h3>
 						<br />
-						<p align="left">Ejercicio práctico: recrear todo el proceso de publicar un dataset Linked Data</p>
-						<br />
-						<p  align="left">Publicar el dataset de ejercicios SPARQL en una infraestructura ya preparada (Linked Data Server)</p>
+						<p align="left">Ejercicio práctico: recrear todo el proceso de publicar nuestro dataset Linked Data en nuestro servidor, en una infraestructura ya preparada (Linked Data Server)</p>
 					</section>
 				
 					<section>
@@ -1035,8 +1034,8 @@ Collaboratively</p><br>
 						<br/>
 						<p align="left">LinkedDataServer.js: 
 						<br><br>
-						    <code>var port=1337;</code> <br>
-						   <code>var endpoint_url = "http://localhost:5820/";</code>  <br>
+						   <code>var port=<strike>3030</strike>;</code> <br>
+						   <code>var endpoint_url = "http://localhost:<strike>8180</strike>/";</code>  <br>
 						      </p>					
 					</section>
 					
@@ -1047,10 +1046,14 @@ Collaboratively</p><br>
 						<br/>			
 						<p align="left"><code>nodejs LinkedDataServer.js</code></p><br/>
 						<p align="left"><a href="http://biomaster.atica.um.es:3030/resource/Prot_B">http://biomaster.atica.um.es:<strike>3030</strike>/resource/Prot_B</a></p><br/>
-						CONNEG curl
-						
-						cp key to everyone and deploy in some of them (inlcuding mine)
-						
+						<p align="left"><a href="http://biomaster.atica.um.es:3030/resource/Prot_A">http://biomaster.atica.um.es:<strike>3030</strike>/resource/Prot_A</a></p><br/>			
+					</section>
+					
+					<section>
+						<h3>Linked Data Server</h3>
+						<br/>			
+						<p align="left"><code>curl --header "accept: application/rdf+xml" http://biomaster.atica.um.es:3030/resource/Prot_B</code></p><br/>		
+						<p align="left"><code>curl --header "accept: text/html" http://biomaster.atica.um.es:3030/resource/Prot_B</code></p><br/>
 						
 					</section>
 
